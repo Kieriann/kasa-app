@@ -1,0 +1,22 @@
+$main-color: #ff6060;
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    
+    img {
+      height: 50px;
+    }
+  
+    nav a {
+      margin-right: 20px;
+      text-decoration: none;
+      color: black;
+      
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }

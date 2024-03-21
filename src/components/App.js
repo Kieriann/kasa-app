@@ -8,20 +8,11 @@ import {
 import React from 'react';
 import AppRouter from './AppRouter';
 import '../styles.scss';
-import Header from './Header';
 
 
 function App() {
   return (
-    <div>
-      <Header />
-    <h1>Liste des appartements</h1>
-      <ul>
-        {data.map((item) => (
-          <li key={item.id}>{item.title}</li>
-        ))}
-      </ul>
-    </div>
+   <AppRouter />
   );
 }
 

@@ -1,13 +1,18 @@
 import React from 'react';
-import Header from './Header';
-import Footer from './Footer';
+import { Link } from 'react-router-dom';
+import Liste from './Liste';
+import Banner from './Banner';
+import Card from './Card';
+import Grille from './Grille';
 
 const Home = () => {
   return (
     <div>
-      <Header />
+      <Banner />
+      <Liste />    
     </div>
-  
-)};
+    
+      );
+};
 
 export default Home;

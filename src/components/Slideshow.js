@@ -64,15 +64,21 @@ const Slideshow = () => {
 
   return (
     <div className="card-details">
-      <div className="image-gallery">
-        <img src={logement.pictures[currentIndex]} alt={`Slide ${currentIndex}`} />
-        <button onClick={goToPrevious}>
-          <FontAwesomeIcon icon={faAngleLeft} />
-        </button>
-        <button onClick={goToNext}>
-          <FontAwesomeIcon icon={faAngleRight} />
-        </button>
-      </div>
+<div className="image-gallery">
+  {logement.pictures.length > 1 && (
+    <>
+      <button onClick={goToPrevious}>
+        <FontAwesomeIcon icon={faAngleLeft} />
+      </button>
+      <span className="image-counter">{`${currentIndex + 1}/${logement.pictures.length}`}</span>
+      <button onClick={goToNext}>
+        <FontAwesomeIcon icon={faAngleRight} />
+      </button>
+    </>
+  )}
+  <img src={logement.pictures[currentIndex]} alt={`Slide ${currentIndex + 1}`} />
+</div>
+
 
       {/* Conteneurs gauche et droite pour les informations */}
       <div className="leftandright">
@@ -112,7 +118,7 @@ const Slideshow = () => {
             {activeSections.description && (
                  
             <div className="accordion-content">
-               <div class="text-background">
+               <div className="text-background">
               <p>{logement.description}</p>
             </div>
             </div>
@@ -125,7 +131,7 @@ const Slideshow = () => {
             </button>
             {activeSections.equipments && (
               <div className="accordion-content">
-                    <div class="text-background">
+                    <div className="text-background">
                 <ul>
                   {logement.equipments.map((equipment, index) => (
                     <li key={index}>{equipment}</li>

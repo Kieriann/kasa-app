@@ -1,11 +1,16 @@
 $main-color: #ff6060;
 
 
+#root {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+
 .app-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  margin-left: 80px;
 }
 
 .header {
@@ -13,10 +18,11 @@ $main-color: #ff6060;
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
-    margin: 30px;
+    margin-top: 30px;
+    margin-left: 80px;
     
     img {
-      height: 50px;
+      height: 60px;
     }
   
     nav a {
@@ -26,9 +32,10 @@ $main-color: #ff6060;
       font-weight: 500;
       cursor: pointer;
       padding-left: 20px;
+      font-size: 25px;
       
       &:last-child {
-        margin-right: 0;
+        margin-right: 80px;
       }
 
       &:hover {
@@ -138,22 +145,6 @@ $main-color: #ff6060;
     object-fit: cover; 
   }  
 
-  .card-info {
-
-  }
-
-  .card-rating {
-
-  }
-
-  .card-tags {
-
-  }
-
-  .card-tag {
-
-  }
-
   .bannerabout-container {
     margin-left: 45px;
     margin-right: 50px;
@@ -259,15 +250,16 @@ font-size: 20px;
 .image-gallery {
   position: relative;
   text-align: center;
-  margin-right: 80px;
-  max-width: 1500px; 
-  height: 500px; 
+  max-width: 1240px; 
+  height: 415px; 
   margin: 0 auto; 
   overflow: hidden; 
   display: flex; 
   justify-content: center; 
   align-items: center; 
+  margin-top: 50px;
   border-radius: 20px;
+
 }
 
 .image-gallery img {
@@ -275,6 +267,7 @@ font-size: 20px;
   height: 500px; 
   object-fit: cover; 
   object-position: center; 
+
 }
 
 .image-gallery button {
@@ -287,10 +280,12 @@ font-size: 20px;
   cursor: pointer;
   padding: 10px;
   z-index: 100;
+  background-color: transparent;
+  font-size: 80px;
 }
 
 .image-gallery button:hover {
-  background-color: rgba(0, 0, 0, 0.7);
+  color: rgba(0, 0, 0, 0.4);
 }
 
 .image-gallery button:first-of-type {
@@ -301,7 +296,7 @@ font-size: 20px;
   right: 10px;
 }
 
-.details-content h1 {
+.left h1 {
   color: #ff6060;
   font-weight: 400;
   margin-bottom: 0;
@@ -311,6 +306,7 @@ font-size: 20px;
 .location {
   font-weight: 500;
   margin-top: 0;
+  margin-bottom: 30px;
 }
 
 .tags-container {
@@ -345,61 +341,149 @@ font-size: 20px;
 
 .host-rating-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end; 
   align-items: center;
 }
 
-.host-image  {
+.rating {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.rating .star {
+  margin-right: 4px;
+}
+
+.star {
+  color: rgb(197, 197, 197); 
+
+}
+
+.star.filled {
+  color:#FF6060;
+}
+
+.host-image {
   border-radius: 50%;
-  margin-right: 10px;
+  width: 80px; 
+  height: 80px; 
+  margin-left: 10px; 
+}
+
+.host-name-container {
+  text-align: center;
+}
+
+.host-name-rating {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.host-first-name {
+  margin: 0;
+  color:#FF6060;
+}
+
+.host-last-name {
+  margin: 0;
+  color:#FF6060;
+  }
+
+.host-name {
+  margin: 0;
+  color:#FF6060; 
+  font-size: 20px;
+}
+
+.host-info {
+  display: flex;
+  align-items: center;
 }
 
 .accordion {
   display: flex;
-  justify-content: space-around;
-  margin-left: 25px;
-
-  
+  margin-left: 25px;  
+  margin-left: 0;
 }
 
-.accordion-item {
-
+.accordion-content, .accordion-title {
+  box-sizing: border-box;
 }
 
 .accordion-title {
   display: flex;
+  justify-content: space-between;
   background-color: #FF6060; 
   color: white;
   width: 500px;
   padding: 10px;
   margin-left:0;
-  margin-bottom: 20px;
   cursor: pointer;
   border: none;
   border-radius: 5px;
   font-size: 18px;
-  align-content: left;
+  font-weight: 550;
+}
 
+.accordion-title button {
+  margin-bottom: 0;
 }
 
 .accordion-content {
-  display: none; /* Par défaut, cachez le contenu jusqu'à ce qu'il soit activé */
-  /* Vous pouvez utiliser JavaScript pour basculer cette propriété sur `block` */
+  transition: max-height 0.3s ease;
+  max-height: 0;
+  width: 500px; 
+  margin: 0 auto;
+    font-weight: 800;
 }
 
-/* Vous pouvez ajouter des classes spécifiques pour gérer l'état actif/inactif */
+.text-background {
+  background-color: #f6f7f6;
+  border-radius: 5px; 
+}
+
+.text-background p {
+  margin-top: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+}
+
 .accordion-content.active {
-  display: block; /* Montre le contenu quand la section est active */
+  max-height: 200px; 
+  display: block; 
+}
+
+.text-background ul {
+  margin-top: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.accordion-icon {
+  transition: transform 0.3s ease;
+}
+
+.accordion-item{
+  margin-bottom: 0;
+}
+
+.accordion-icon.active {
+  transform: rotate(180deg); 
 }
 
 .leftandright {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
   margin: 20px 0;
 }
 
 .right {
   display: flex;
-  flex-direction:row;
+  align-items: center;
 }

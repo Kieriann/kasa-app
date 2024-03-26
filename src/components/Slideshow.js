@@ -51,9 +51,7 @@ const Slideshow = () => {
 
   const toggleAccordion = (section) => {
     setActiveSections(prevState => {
-      console.log("Avant : ", prevState);
       const newState = { ...prevState, [section]: !prevState[section] };
-      console.log("Après : ", newState);
       return newState;
     });
   };
@@ -79,7 +77,6 @@ const Slideshow = () => {
   <img src={logement.pictures[currentIndex]} alt={`Slide ${currentIndex + 1}`} />
 </div>
 
-
       {/* Conteneurs gauche et droite pour les informations */}
       <div className="leftandright">
         {/* Conteneur gauche pour le titre, la localisation et les tags */}
@@ -90,6 +87,7 @@ const Slideshow = () => {
             {logement.tags.map((tag, index) => (
               <span key={index} className="tag">{tag}</span>
             ))}
+      
           </div>
         </div>
 
@@ -140,11 +138,10 @@ const Slideshow = () => {
               </div>
               </div>
             )}
-         </div>
         </div>
         
-
-      </div>
+        </div>
+        </div>
   );
 };
 

@@ -1,10 +1,9 @@
 $main-color: #ff6060;
 
-
-#root {
-  padding-left: 0;
-}
-
+body {
+max-width: 1440px;
+margin: 0 auto;
+ }
 
 .app-container {
   display: flex;
@@ -19,6 +18,7 @@ $main-color: #ff6060;
     padding: 0 20px;
     margin-top: 30px;
     margin-left: 80px;
+    margin-bottom: 30px;
     
     img {
       height: 60px;
@@ -51,8 +51,12 @@ $main-color: #ff6060;
     align-items: center;
     justify-content: center;
     padding-top: 35px;
-    
+    max-width: 1240px;
 
+    .footer.footer{
+      margin-top: 100px;
+    }
+    
     img {
       height: 30px;
       color: white;
@@ -67,7 +71,6 @@ $main-color: #ff6060;
   .banner-container {
     margin-left: 45px;
     margin-right: 50px;
-    
   }
 
   .banner {
@@ -309,8 +312,6 @@ font-size: 20px;
 .left h1 {
   color: #ff6060;
   font-weight: 400;
-  margin-bottom: 0;
-  margin-top: 0;
 }
 
 .location {
@@ -416,8 +417,10 @@ font-size: 20px;
 
 .accordion {
   display: flex;
-  justify-content: space-around;
-  margin-left: 50px;  
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px auto;
+  max-width: 1240px;
 }
 
 .accordion-content, .accordion-title {
@@ -488,9 +491,10 @@ font-size: 20px;
 
 .leftandright {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  margin: 20px 0;
+  margin: 20px auto;
+  max-width: 1240px;
 }
 
 .right {

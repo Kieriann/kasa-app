@@ -5,6 +5,7 @@ import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import logements from '../data/logements.json';
+import Collapse from './Collapse';
 
 const Slideshow = () => {
   let { id } = useParams();
@@ -106,42 +107,27 @@ const Slideshow = () => {
       </div>
       </div>
 
-        
-        <div className="accordion">
-          <div className="accordion-item">
-            <button className="accordion-title" onClick={() => toggleAccordion('description')}>
-              Description
-              <FontAwesomeIcon icon={faAngleDown} className={`accordion-icon ${activeSections.description ? 'active' : ''}`} />
-            </button>
-            {activeSections.description && (
-                 
-            <div className="accordion-content">
-               <div className="text-background">
-              <p>{logement.description}</p>
-            </div>
-            </div>
-          )}
+      <div className="accordion-container">
+      <div className="accordion-item">
+        <Collapse title="Description">
+          <div className="text-background">
+            <p>{logement.description}</p>
           </div>
-          <div className="accordion-item">
-            <button className="accordion-title" onClick={() => toggleAccordion('equipments')}>
-              Équipements
-              <FontAwesomeIcon icon={faAngleDown} className={`accordion-icon ${activeSections.equipments ? 'active' : ''}`} />
-            </button>
-            {activeSections.equipments && (
-              <div className="accordion-content">
-                    <div className="text-background">
-                <ul>
-                  {logement.equipments.map((equipment, index) => (
-                    <li key={index}>{equipment}</li>
-                  ))}
-                </ul>
-              </div>
-              </div>
-            )}
-        </div>
-        
-        </div>
-        </div>
+        </Collapse>
+      </div>
+      <div className="accordion-item">
+        <Collapse title="Équipements">
+          <div className="text-background">
+            <ul>
+              {logement.equipments.map((equipment, index) => (
+                <li key={index}>{equipment}</li>
+              ))}
+            </ul>
+          </div>
+        </Collapse>
+      </div>
+    </div>
+    </div>
   );
 };
 

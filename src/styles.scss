@@ -51,7 +51,7 @@ margin: 0 auto;
     align-items: center;
     justify-content: center;
     padding-top: 35px;
-    max-width: 1240px;
+    max-width: 1440px;
 
     .footer.footer{
       margin-top: 100px;
@@ -175,14 +175,14 @@ margin: 0 auto;
 
   .collapse-container {
     display: flex;
+    align-items: center;
     flex-direction: column;
-    align-items: center; // 
     background-color: #ff6060;
     color: white;
     font-weight: 500;
     margin: 30px auto; 
     border-radius: 5px;
-    width: 80%;
+    width: 100%;
   }
   
   .collapse-header {
@@ -213,7 +213,7 @@ margin: 0 auto;
     width: 100%; 
     background-color: white;
     &.open {
-      max-height: 500px; 
+      max-height: 200px; 
     }
   }
   
@@ -370,7 +370,6 @@ font-size: 20px;
 
 .star {
   color: rgb(197, 197, 197); 
-
 }
 
 .star.filled {
@@ -415,42 +414,27 @@ font-size: 20px;
   align-items: center;
 }
 
+.accordion-container {
+  display:flex;
+  justify-content: space-between;
+}
+
 .accordion {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 20px auto;
   max-width: 1240px;
+  gap: 50px;
 }
 
-.accordion-content, .accordion-title {
-  box-sizing: border-box;
-}
+.accordion-item {
+  flex:1;
+  margin: 0 10px;
 
-.accordion-title {
-  display: flex;
-  justify-content: space-between;
-  background-color: #FF6060; 
-  color: white;
-  width: 500px;
-  padding: 10px;
-  cursor: pointer;
-  border: none;
-  border-radius: 5px;
-  font-size: 18px;
-  font-weight: 550;
+&:not(:last-child) {
+  margin-right: 10px;
 }
-
-.accordion-title button {
-  margin-bottom: 0;
-}
-
-.accordion-content {
-  transition: max-height 0.3s ease;
-  max-height: 0;
-  width: 500px; 
-  margin: 0 auto;
-    font-weight: 800;
 }
 
 .text-background {
@@ -466,27 +450,10 @@ font-size: 20px;
   padding-left: 10px;
 }
 
-.accordion-content.active {
-  max-height: 200px; 
-  display: block; 
-}
-
 .text-background ul {
   margin-top: 0;
   padding-top: 10px;
   padding-bottom: 10px;
-}
-
-.accordion-icon {
-  transition: transform 0.3s ease;
-}
-
-.accordion-item{
-  margin-bottom: 0;
-}
-
-.accordion-icon.active {
-  transform: rotate(180deg); 
 }
 
 .leftandright {

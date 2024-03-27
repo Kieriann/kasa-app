@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
@@ -8,6 +8,7 @@ import logements from '../data/logements.json';
 import Collapse from './Collapse';
 
 const Slideshow = () => {
+  let navigate = useNavigate();
   let { id } = useParams();
   const [logement, setLogement] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -20,9 +21,11 @@ const Slideshow = () => {
     const foundLogement = logements.find(l => l.id === id);
     if (foundLogement) {
       setLogement(foundLogement);
-      setCurrentIndex(0);
+      setCurrentIndex(0); 
+    } else {
+      navigate("/not-found", { replace: true }); 
     }
-  }, [id]);
+  }, [id, navigate]);
 
   const goToPrevious = () => {
     setCurrentIndex((prevIndex) =>
@@ -93,19 +96,23 @@ const Slideshow = () => {
         </div>
 
         {/* Conteneur droite pour l'image de l'hôte, le nom et l'évaluation */}
-        <div className="host-rating-container">
-        <div className="host-info">
-          <div className="host-name-rating">
-            <div className="host-name">
-              <p className="host-first-name">{logement.host.name.split(" ")[0]}</p>
-              <p className="host-last-name">{logement.host.name.split(" ").slice(1).join(" ")}</p>
-            </div>
-            <div className="rating">{renderRating()}</div>
-          </div>
-          <img src={logement.host.picture} alt={logement.host.name} className="host-image" />
-        </div>
-      </div>
-      </div>
+<div className="host-rating-container">
+  
+  {/* Évaluation */}
+  <div className="rating">{renderRating()}</div>
+
+  {/* Nom de l'hôte */}
+  <div className="host-name">
+    <p className="host-first-name">{logement.host.name.split(" ")[0]}</p>
+    <p className="host-last-name">{logement.host.name.split(" ").slice(1).join(" ")}</p>
+  </div>
+  
+  {/* Image de l'hôte */}
+  <div className="host-image-container">
+    <img src={logement.host.picture} alt={logement.host.name} className="host-image" />
+  </div>
+  </div>  
+</div>
 
       <div className="accordion-container">
       <div className="accordion-item">

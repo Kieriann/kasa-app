@@ -96,22 +96,24 @@ const Slideshow = () => {
         </div>
 
         {/* Conteneur droite pour l'image de l'hôte, le nom et l'évaluation */}
-<div className="host-rating-container">
+        <div className="host-rating-container">
   
+  <div className="host-name-and-image">
+    {/* Nom de l'hôte */}
+    <div className="host-name">
+      <p className="host-first-name">{logement.host.name.split(" ")[0]}</p>
+      <p className="host-last-name">{logement.host.name.split(" ").slice(1).join(" ")}</p>
+    </div>
+    
+    {/* Image de l'hôte */}
+    <div className="host-image-container">
+      <img src={logement.host.picture} alt={logement.host.name} className="host-image" />
+    </div>
+  </div>
+
   {/* Évaluation */}
   <div className="rating">{renderRating()}</div>
-
-  {/* Nom de l'hôte */}
-  <div className="host-name">
-    <p className="host-first-name">{logement.host.name.split(" ")[0]}</p>
-    <p className="host-last-name">{logement.host.name.split(" ").slice(1).join(" ")}</p>
-  </div>
-  
-  {/* Image de l'hôte */}
-  <div className="host-image-container">
-    <img src={logement.host.picture} alt={logement.host.name} className="host-image" />
-  </div>
-  </div>  
+</div>
 </div>
 
       <div className="accordion-container">

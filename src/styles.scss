@@ -178,6 +178,60 @@ margin: 0 auto;
     }
   }
 
+  .host-rating-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+    .host-name-and-image {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+  
+    .host-name {
+      flex-grow: 1;
+      text-align: right;
+      margin-right: 15px; 
+      color:#ff6060;
+      font-size: 18px;
+  
+      .host-first-name,
+      .host-last-name {
+        margin: 0;
+      }
+    }
+  
+    .host-image-container {
+      .host-image {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%
+      }
+    }
+  
+    .rating {
+      width: 100%;
+      justify-content: center;
+      display: flex;
+      margin-top: 10px; 
+      color:#ff6060;
+      gap:10px;
+    }
+
+    .star {
+      color: rgb(197, 197, 197);
+    
+      &.filled {
+        color: #FF6060; 
+      }
+    }
+    
+
+  }
+  
+
   .collapse-container {
     display: flex;
     align-items: center;
@@ -353,69 +407,6 @@ font-size: 20px;
   cursor: pointer;
 }
 
-.host-rating-container {
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.rating {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  margin-top: 20px;
-  font-size: 20px;
-}
-
-.rating .star {
-  margin-right: 4px;
-}
-
-.star {
-  color: rgb(197, 197, 197); 
-}
-
-.star.filled {
-  color:#FF6060;
-}
-
-.host-image {
-  border-radius: 50%;
-  width: 80px; 
-  height: 80px; 
-  margin-left: 10px; 
-}
-
-.host-name-container {
-  text-align: center;
-}
-
-.host-name-rating {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.host-first-name {
-  margin: 0;
-  color:#FF6060;
-}
-
-.host-last-name {
-  margin: 0;
-  color:#FF6060;
-  }
-
-.host-name {
-  margin: 0;
-  color:#FF6060; 
-  font-size: 20px;
-}
-
-.host-info {
-  display: flex;
-  align-items: center;
-}
 
 .accordion-container {
   display:flex;
@@ -480,7 +471,7 @@ font-size: 20px;
     padding: 0 0px;
     margin-top: 30px;
     margin-left: 8px;
-    margin-bottom: 20px;
+    margin-bottom: 0;
     
     img {
       height: 50px;
@@ -522,6 +513,7 @@ width: 100%;
 .banner {
   height: 100px;
   width: 295px;
+  margin-top: 20px;
 }
 
 .image-gallery {
@@ -547,21 +539,23 @@ width: 100%;
 }
 
 .host-rating-container {
-  display: flex;
+  flex-direction: row-reverse;
   align-items: center;
-  width:93%; 
+  text-align: center;
+  width:95%;
+  margin-right: 5px;
+}
+
+.host-name-and-image {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
 }
 
 .rating {
-  margin-top: 0;
-  font-size: 15px;
-  justify-content: flex-start;
-  margin-left: 20px;
-}
-
-.host-image {
-  width: 40px;
-  height: 40px;
+  display: flex;
+  justify-content: left;
+  width: 100%;
 }
 
 .accordion {
@@ -598,9 +592,10 @@ width: 100%;
 
 .location {
   margin-left: 20px;
+  margin-bottom: 10px;
 
 .p {
-  margin-bottom: 15px;
+  margin-bottom: 5px;
 }}
 
 .tags-container {
